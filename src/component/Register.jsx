@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProviders';
 
 const Register = () => {
+
+const {createUser} = useContext(AuthContext);
+
+const handleRegister = e =>{
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password)
+
+  createUser(email,password)
+  .then(result=>{
+    console.log(result)
+  })
+
+  .catch(error=>{
+    console.log('Error:', error)
+  })
+
+}
+
     return (
         <div className='flex flex-col items-center mt-14'>
             <h2  className='font-bold text-3xl text-purple-600 mb-5'>Register Now!</h2>
 
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <form  className="card-body">
+      <form onSubmit={handleRegister} className="card-body">
 
       <div className="form-control">
           <label className="label">
