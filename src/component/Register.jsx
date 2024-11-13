@@ -18,7 +18,7 @@ const handleRegister = e =>{
   })
 
   .catch(error=>{
-    console.log('Error:', error)
+    console.log('Error:', error.message)
   })
 
 }
