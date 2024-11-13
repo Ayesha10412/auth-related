@@ -12,6 +12,7 @@ import Home from './component/Home.jsx';
 import Login from './component/Login.jsx';
 import Register from './component/Register.jsx';
 import NavBar from './component/NavBar.jsx';
+import AuthProviders from './Providers/AuthProviders.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,8 +46,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+<AuthProviders>
+<RouterProvider router={router} />
 
+</AuthProviders>
 
   </StrictMode>,
 )
