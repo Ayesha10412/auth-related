@@ -15,6 +15,7 @@ import NavBar from './component/NavBar.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
 import Order from './component/Order.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import Profile from './component/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   element: <PrivateRoute><Order></Order></PrivateRoute>
 },
 
+{
+  path: 'profile',
+  element: <PrivateRoute><Profile></Profile></PrivateRoute>
+}
 
     ]
   },
