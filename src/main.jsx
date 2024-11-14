@@ -13,6 +13,8 @@ import Login from './component/Login.jsx';
 import Register from './component/Register.jsx';
 import NavBar from './component/NavBar.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
+import Order from './component/Order.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,12 @@ const router = createBrowserRouter([
   path: 'navbar',
   element: <NavBar></NavBar>
 },
+
+{
+  path:'order',
+  element: <PrivateRoute><Order></Order></PrivateRoute>
+},
+
 
     ]
   },
